@@ -18,21 +18,21 @@ div {
 	background-color: white;
 }
 
-.square .containPiece {
+.square {
 	height: 4rem;
 	width: 4rem;
 	border: 1px solid black;
 	background-color: white;
 }
 
-.board {
+.plane {
 	border: 1rem solid blue;
 	display: inline-grid;
 	grid-template-columns: repeat(var(--xy), 1fr);
 	grid-template-rows: repeat(var(--xy), 1fr);
 }
 
-.mickyMouse {
+/* .mickyMouse {
 	height: 4rem;
 	width: 4rem;
-}
+} */
