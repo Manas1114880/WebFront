@@ -6,13 +6,12 @@ class Square {
 		this.piece = piece;
 		this.id = "Square_" + x + "_" + y;
 
-		this.elem = document.createElement("div");
+		this.elem = document.createElement("img");
 		this.elem.classList.add("square");
 		this.plane.elem.append(this.elem);
 		this.elem.addEventListener("click", this.placeMove);
 	}
 	placeMove() {
-		this.piece = new Piece(this, "square", "white", board);
-		this.piece.displayPiece();
+		this.src = "X.png";
 	}
 }
