@@ -1,6 +1,7 @@
 class Plane {
-	constructor(board) {
+	constructor(board, level) {
 		this.board = board;
+		this.level = level;
 		const size = 4;
 		this.size = size;
 		this.squares = new Array(size);
@@ -15,7 +16,7 @@ class Plane {
 		for (var x = 0; x < this.size; x++) {
 			this.squares[x] = new Array(this.size);
 			for (var y = 0; y < this.size; y++) {
-				this.squares[x][y] = new Square(x, y, this);
+				this.squares[x][y] = new Square(x, y, this.level, this);
 			}
 		}
 	}
