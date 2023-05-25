@@ -1,0 +1,3 @@
+onload = (event) => {
+    new Game();
+};
