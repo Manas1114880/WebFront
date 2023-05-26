@@ -1,13 +1,11 @@
 class Game {
     constructor() {
         this.b = new Board(this);
-        console.log(this.b);
+        console.log(this.b.state);
+        // this.checkWin(this.b.state);
     }
 
     isSame(x) {
-        for (var i = 0; i < x.length; i++) {
-            console.log(x[i]);
-        }
         for (var i = 0; i < x.length; i++) {
             if (x[i] == "blank" || x[0] != x[i])
                 return 0;
@@ -100,20 +98,13 @@ class Game {
 
     checkWin() {
         var vals = new Array(this.b.size);
-        for (var i = 0; i < this.b.size; i++) {
-            vals[i] = new Array(this.b.size);
-            for (var j = 0; j < this.b.size; j++) {
-                vals[i][j] = new Array(this.b.size);
-            }
-        }
-        console.log(this.b);
 
         // Multi-board diagonals
         for (var i = 0; i < 4; i++) {
             for (var j = 0; j < vals.length; j++) {
                 vals[j] = this.zRotate(i)[j][j][j];
             }
-            // alert("Cross-board " + (i + 1) + ": " + Arrays.toString(vals));
+            console.log("Cross-board " + (i + 1) + ": " + vals.toString());
             if (this.isSame(vals) != 0) {
                 alert(this.b.players[this.b.activePlayer] + " wins!");
                 return true;
@@ -127,7 +118,7 @@ class Game {
                 for (var k = 0; k < this.b.size; k++) {
                     vals[k] = this.zRotate(i)[k][k][j];
                 }
-                // alert("Diagonal " + (i + 1) + ": " + Arrays.toString(vals));
+                console.log("Diagonal " + (i + 1) + ": " + vals.toString());
                 if (this.isSame(vals) != 0) {
                     alert(this.b.players[this.b.activePlayer] + " wins!");
                     return true;
@@ -140,7 +131,7 @@ class Game {
                 for (var k = 0; k < this.b.size; k++) {
                     vals[k] = this.yRotate(i)[k][k][j];
                 }
-                // alert("Diagonal " + (i + 5) + ": " + Arrays.toString(vals));
+                console.log("Diagonal " + (i + 5) + ": " + vals.toString());
                 if (this.isSame(vals) != 0) {
                     alert(this.b.players[this.b.activePlayer] + " wins!");
                     return true;
@@ -155,7 +146,7 @@ class Game {
                     for (var k = 0; k < vals.length; k++) {
                         vals[k] = this.zRotate(l)[i][j][k];
                     }
-                    // alert("Column " + (j + 1) + ": " + Arrays.toString(vals));
+                    console.log("Column " + (j + 1) + ": " + vals.toString());
                     if (this.isSame(vals) != 0) {
                         alert(this.b.players[this.b.activePlayer] + " wins!");
                         return true;
@@ -170,7 +161,7 @@ class Game {
                     for (var k = 0; k < vals.length; k++) {
                         vals[k] = this.yRotate(l)[i][j][k];
                     }
-                    // alert("Column " + (j + 5) + ": " + Arrays.toString(vals));
+                    console.log("Column " + (j + 5) + ": " + vals.toString());
                     if (this.isSame(vals) != 0) {
                         alert(this.b.players[this.b.activePlayer] + " wins!");
                         return true;
