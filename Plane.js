@@ -2,13 +2,13 @@ class Plane {
 	constructor(board, level) {
 		this.board = board;
 		this.level = level;
-		const size = 4;
+		const size = 3;
 		this.size = size;
 		this.squares = new Array(size);
 		this.elem = document.createElement("div");
 		this.elem.classList.add("plane");
 		document.querySelector(":root").style.setProperty("--xy", size);
-		this.elem.setAttribute("style", "grid-template-columns: repeat(" + this.size + ",1fr);grid-template-rows: repeat(" + this.size + ",1fr);");
+		// this.elem.setAttribute("style", "grid-template-columns: repeat(" + this.size + ",1fr);grid-template-rows: repeat(" + this.size + ",1fr);");
 		this.board.elem.append(this.elem);
 		this.drawSquares(this.size);
 	}

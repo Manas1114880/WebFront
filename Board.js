@@ -1,6 +1,9 @@
 class Board {
-	constructor() {
-		const size = 4;
+	constructor(game) {
+		this.players = ["X", "O"];
+		this.activePlayer = 0;
+		const size = 3;
+		this.game = game;
 		this.state = new Array(size);
 		for (var i = 0; i < this.state.length; i++) {
 			this.state[i] = new Array(this.state.length);
