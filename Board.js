@@ -23,4 +23,14 @@ class Board {
 			this.planes[i] = new Plane(this, i);
 		}
 	}
+	reset() {
+		for(var i = 0; i < this.size; i++) {
+			for(var j = 0; j < this.size; j++) {
+				for(var k = 0; k < this.size; k++) {
+					this.state[i][j][k] = "blank";
+					this.planes[i].squares[j][k].elem.src = "empty.png";
+				}
+			}
+		}
+	}
 }
