@@ -139,6 +139,17 @@ class Game {
             }
         }
 
+        for (var j = 0; j < this.b.size; j++) {
+            for (var k = 0; k < this.b.size; k++) {
+                vals[k] = this.b.state[j][k][k];
+            }
+            console.log("Diagonal " + (j + 9) + ": " + vals.toString());
+            if (this.isSame(vals) != 0) {
+                alert(this.b.players[this.b.activePlayer] + " wins!");
+                return true;
+            }
+        }
+
         // Columns
         for (var l = 0; l < 2; l++) {
             for (var i = 0; i < vals.length; i++) {
