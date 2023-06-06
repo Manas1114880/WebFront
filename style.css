@@ -3,19 +3,8 @@ html {
 	width: 100%;
 }
 
-div {
-	border: 1rem solid;
-}
-
 :root {
 	--xy: 4rem;
-}
-
-.square {
-	height: 4rem;
-	width: 4rem;
-	border: 1px solid black;
-	background-color: white;
 }
 
 .square {
@@ -31,8 +20,3 @@ div {
 	grid-template-columns: repeat(var(--xy), 1fr);
 	grid-template-rows: repeat(var(--xy), 1fr);
 }
-
-/* .mickyMouse {
-	height: 4rem;
-	width: 4rem;
-} */
